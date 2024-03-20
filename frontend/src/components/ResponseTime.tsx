@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   LineChart,
   Line,
@@ -9,6 +10,11 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { AppDispatch, RootState } from "../state/store";
+import {
+  switchToDate,
+  switchToWeek,
+} from "../state/responseTime/responseTimeSlice";
 
 type Props = {
   response_times:
@@ -48,20 +54,25 @@ type ResponseTimeWeek = {
   average_time: number;
 }[];
 const ResponseTime = ({ response_times }: Props) => {
-  const [tabState, setTabState] = useState("date");
+  const responseTabBtn = useSelector(
+    (state: RootState) => state.responseTabBtn.value
+  );
+  const dispatch = useDispatch<AppDispatch>();
+
+  // const [tabState, setTabState] = useState("date");
   const [data, setData] = useState<ResponseTimeDate | ResponseTimeWeek>();
-  //   console.log(tabState, data);
+  // console.log("responseTabBtn", responseTabBtn);
   useEffect(() => {
     if (response_times) {
-      if (tabState === "date") {
-        //   console.log("narndra");
+      if (responseTabBtn === "date") {
+        // console.log("narndra");
         setData(response_times.day_wise);
       } else {
-        //   console.log("naren4488");
+        // console.log("naren4488");
         setData(response_times.week_wise);
       }
     }
-  }, [response_times, tabState]);
+  }, [response_times, responseTabBtn]);
 
   return (
     <div className="response-time">
@@ -72,14 +83,14 @@ const ResponseTime = ({ response_times }: Props) => {
         </div>
         <div>
           <button
-            className={`tab-btn ${tabState === "date" && "active-btn"}`}
-            onClick={() => setTabState("date")}
+            className={`tab-btn ${responseTabBtn === "date" && "active-btn"}`}
+            onClick={() => dispatch(switchToDate())}
           >
             Date Wise
           </button>
           <button
-            className={`tab-btn ${tabState === "week" && "active-btn"}`}
-            onClick={() => setTabState("week")}
+            className={`tab-btn ${responseTabBtn === "week" && "active-btn"}`}
+            onClick={() => dispatch(switchToWeek())}
           >
             Week Wise
           </button>
@@ -96,7 +107,7 @@ const ResponseTime = ({ response_times }: Props) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
-          <XAxis dataKey={`${tabState}`} />
+          <XAxis dataKey={`${responseTabBtn}`} />
           <YAxis />
           <Tooltip
             cursor={{ fill: "transparent" }}
