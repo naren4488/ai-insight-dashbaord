@@ -2,6 +2,10 @@
 
 youtube video link for basic explaination - https://youtu.be/6zgQtp-EcFU
 
+<!-- website live link -->
+
+Visit website here : https://ai-insight-dashbaord.onrender.com/
+
 <!-- Project setup -->
 
 This project is made using vite react & using core libraries like Sass, Recharts & Redux
