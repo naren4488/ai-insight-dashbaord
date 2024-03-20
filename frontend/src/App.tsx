@@ -23,12 +23,15 @@ function App() {
   }, []);
   return (
     <div className="app">
-      <CategoryDistribution
-        category_distribution={aiData?.category_distribution}
-      />
-      <ResponseTime response_times={aiData?.response_times} />
-      <UsageStatistics usage_statistics={aiData?.usage_statistics} />
-      <UserSatisfaction user_satisfaction={aiData?.user_satisfaction} />
+      <h1>AI-Insight Dashboard</h1>
+      <div className="graphs">
+        <CategoryDistribution
+          category_distribution={aiData?.category_distribution}
+        />
+        <ResponseTime response_times={aiData?.response_times} />
+        <UsageStatistics usage_statistics={aiData?.usage_statistics} />
+        <UserSatisfaction user_satisfaction={aiData?.user_satisfaction} />
+      </div>
     </div>
   );
 }

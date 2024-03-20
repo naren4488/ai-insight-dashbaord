@@ -122,7 +122,7 @@ const UsageStatistics = ({ usage_statistics }: Props) => {
   }, [tabState]);
 
   return (
-    <div className="user-satisfaction">
+    <div className="graph-section">
       <div className="response-main-content">
         <div className="header-content">
           <h2>Usage Staticstics</h2>

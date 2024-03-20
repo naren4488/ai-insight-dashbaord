@@ -37,7 +37,7 @@ const CustomTooltip = ({
   if (active && payload && payload.length) {
     return (
       <div className="custom-tooltip">
-        <p className="label">{`${label} : ${payload[0].value}`}</p>
+        <p className="label">{`${label} - ${payload[0].value}`}</p>
       </div>
     );
   }
@@ -75,7 +75,7 @@ const ResponseTime = ({ response_times }: Props) => {
   }, [response_times, responseTabBtn]);
 
   return (
-    <div className="response-time">
+    <div className="graph-section">
       <div className="response-main-content">
         <div className="header-content">
           <h2>Respnose Time</h2>
@@ -106,7 +106,7 @@ const ResponseTime = ({ response_times }: Props) => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <CartesianGrid strokeDasharray="8 6" vertical={false} />
           <XAxis dataKey={`${responseTabBtn}`} />
           <YAxis />
           <Tooltip
@@ -115,11 +115,11 @@ const ResponseTime = ({ response_times }: Props) => {
               <CustomTooltip active={true} payload={[{ value: 0 }]} label="" />
             }
           />
-          <Legend payload={[{ value: "Response Time", type: "line" }]} />
+          <Legend payload={[{ value: "Avg Time vs Day/Week", type: "line" }]} />
           <Line
             type="monotone"
             dataKey="average_time"
-            stroke="#4d9fe2"
+            stroke="#4473EC"
             animationDuration={200}
             animationBegin={50}
           />

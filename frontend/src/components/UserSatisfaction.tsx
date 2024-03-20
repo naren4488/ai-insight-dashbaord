@@ -32,7 +32,7 @@ const CustomTooltip = ({
   if (active && payload && payload.length) {
     return (
       <div className="custom-tooltip">
-        <p className="label">{`${label} : ${payload[0].value}`}</p>
+        <p className="label">{`${label} - ${payload[0].value}`}</p>
       </div>
     );
   }
@@ -46,7 +46,7 @@ const UserSatisfaction = ({ user_satisfaction }: Props) => {
   // console.log("data: ", data);
 
   return (
-    <div className="user-satisfaction">
+    <div className="graph-section">
       <div className="header-content">
         <h2>User Satisfaction</h2>
         <p>User's count based on rating</p>
@@ -61,7 +61,7 @@ const UserSatisfaction = ({ user_satisfaction }: Props) => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <CartesianGrid strokeDasharray="8 6" vertical={false} />
           <XAxis dataKey="rating" />
           <YAxis domain={[0, "dataMax + 200"]} />
           <Tooltip
@@ -75,11 +75,11 @@ const UserSatisfaction = ({ user_satisfaction }: Props) => {
           <Bar
             label={{ position: "top", fill: "gray" }}
             dataKey="count"
-            fill="#7BDEE9"
+            fill="#659BF2"
             activeBar={{
-              stroke: "#4d9fe2",
+              stroke: "#4473EC",
               strokeWidth: 2,
-              fill: "#4d9fe2",
+              fill: "#4473EC",
             }}
           />
         </BarChart>

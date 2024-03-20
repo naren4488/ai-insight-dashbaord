@@ -1,5 +1,15 @@
-.app {
-    padding: 20px;
+@import 'var';
+
+.app{
+  padding: 24px;
+  h1{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+}
+
+.graphs {
     display: grid;
     grid-template-rows: repeat(2, 600px);
     gap: 20px;
@@ -7,7 +17,7 @@
   }
   
   @media screen and (max-width: 920px) {
-    .app {
+    .graphs {
       grid-template-columns: 98%;
     }
   }
@@ -20,30 +30,24 @@
     color: rgb(212, 212, 212);
   }
   
-  .category-distribution {
+.graph-section {
     border-radius: 16px;
     padding: 20px;
-    background-color: #0c0d0d;
+    background-color: $graph-section-bg-color;
     /* height: 600px; */
     /* width: 50%; */
-    color: white;
-  }
+    color: $btn-text-color;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
   
   .custom-tooltip {
-    background-color: white;
+    background-color: $btn-text-color;
     color: black;
     border-radius: 8px;
     padding: 4px 8px;
   }
   
-  .response-time {
-    border-radius: 16px;
-    padding: 20px;
-    background-color: #0c0d0d;
-    /* height: 600px; */
-    /* width: 80%; */
-    color: white;
-  }
+ 
   
   .response-main-content {
     display: flex;
@@ -55,10 +59,10 @@
     padding: 12px;
     border-radius: 6px;
     box-sizing: border-box;
-    border: solid 0.5px white;
+    border: solid 0.5px $btn-text-color;
     background-color: transparent;
     margin-left: 5px;
-    color: white;
+    color: $btn-text-color;
   }
   
   button:hover {
@@ -68,22 +72,15 @@
   .active-btn {
     /* background-color: #4d9fe2; */
     /* color: black; */
-    background-color: white;
+    background-color: $btn-text-color;
     color: black;
     border: none;
   }
   
-  .user-satisfaction {
-    border-radius: 16px;
-    padding: 20px;
-    background-color: #0c0d0d;
-    /* height: 600px; */
-    /* width: 96%; */
-    color: white;
-  }
+
   
   .stats-p {
-    color: white;
+    color: $btn-text-color;
     text-align: center;
   }
   

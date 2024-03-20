@@ -47,7 +47,7 @@ const CategoryDistribution = ({ category_distribution }: Props) => {
   }
 
   return (
-    <div className="category-distribution">
+    <div className="graph-section">
       <div className="header-content">
         <h2>Category Distribution</h2>
         <p>Number of queries per category</p>
@@ -63,7 +63,7 @@ const CategoryDistribution = ({ category_distribution }: Props) => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <CartesianGrid strokeDasharray="8 6" vertical={false} />
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip
@@ -73,18 +73,16 @@ const CategoryDistribution = ({ category_distribution }: Props) => {
             }
           />
 
-          <Legend
-            payload={[{ value: "Category Distribution", type: "line" }]}
-          />
+          <Legend payload={[{ value: "Queries vs Category", type: "line" }]} />
           {/* <Bar dataKey="pv" fill="#8884d8" /> */}
           <Bar
             label={{ position: "top", fill: "gray" }}
             dataKey="value"
-            fill="#7BDEE9"
+            fill="#659BF2"
             activeBar={{
-              stroke: "#4d9fe2",
+              stroke: "#4473EC",
               strokeWidth: 2,
-              fill: "#4d9fe2",
+              fill: "#4473EC",
             }}
           />
         </BarChart>
