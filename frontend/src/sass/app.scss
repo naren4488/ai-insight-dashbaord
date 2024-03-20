@@ -1,0 +1,89 @@
+.app {
+    padding: 20px;
+    display: grid;
+    grid-template-rows: repeat(2, 600px);
+    gap: 20px;
+    grid-template-columns: repeat(2, 49%);
+  }
+  
+  @media screen and (max-width: 920px) {
+    .app {
+      grid-template-columns: 98%;
+    }
+  }
+  
+  .header-content {
+    margin-bottom: 40px;
+  }
+  
+  .header-content p {
+    color: rgb(212, 212, 212);
+  }
+  
+  .category-distribution {
+    border-radius: 16px;
+    padding: 20px;
+    background-color: #0c0d0d;
+    /* height: 600px; */
+    /* width: 50%; */
+    color: white;
+  }
+  
+  .custom-tooltip {
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    padding: 4px 8px;
+  }
+  
+  .response-time {
+    border-radius: 16px;
+    padding: 20px;
+    background-color: #0c0d0d;
+    /* height: 600px; */
+    /* width: 80%; */
+    color: white;
+  }
+  
+  .response-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .tab-btn {
+    padding: 12px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border: solid 0.5px white;
+    background-color: transparent;
+    margin-left: 5px;
+    color: white;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  .active-btn {
+    /* background-color: #4d9fe2; */
+    /* color: black; */
+    background-color: white;
+    color: black;
+    border: none;
+  }
+  
+  .user-satisfaction {
+    border-radius: 16px;
+    padding: 20px;
+    background-color: #0c0d0d;
+    /* height: 600px; */
+    /* width: 96%; */
+    color: white;
+  }
+  
+  .stats-p {
+    color: white;
+    text-align: center;
+  }
+  
